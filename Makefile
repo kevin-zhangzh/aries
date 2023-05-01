@@ -90,6 +90,7 @@ bbs-interop-test:
 
 generate-test-keys: clean
 	@mkdir -p -p test/bdd/fixtures/keys/tls
+	@echo "mkdir success"
 	@docker run -i --rm \
 		-v $(abspath .):/opt/go/src/$(PROJECT_ROOT) \
 		--entrypoint "/opt/go/src/$(PROJECT_ROOT)/scripts/generate_test_keys.sh" \

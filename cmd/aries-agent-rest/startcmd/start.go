@@ -224,21 +224,21 @@ var (
 
 	//nolint:gochecknoglobals
 	keyTypes = map[string]kms.KeyType{
-		"ed25519":           kms.ED25519Type,
-		"ecdsap256ieee1363": kms.ECDSAP256TypeIEEEP1363,
-		"ecdsap256der":      kms.ECDSAP256TypeDER,
-		"ecdsap384ieee1363": kms.ECDSAP384TypeIEEEP1363,
-		"ecdsap384der":      kms.ECDSAP384TypeDER,
-		"ecdsap521ieee1363": kms.ECDSAP521TypeIEEEP1363,
-		"ecdsap521der":      kms.ECDSAP521TypeDER,
+		"ed25519":           kms.KeyType(kms.ED25519Type),
+		"ecdsap256ieee1363": kms.KeyType(kms.ECDSAP256TypeIEEEP1363),
+		"ecdsap256der":      kms.KeyType(kms.ECDSAP256TypeDER),
+		"ecdsap384ieee1363": kms.KeyType(kms.ECDSAP384TypeIEEEP1363),
+		"ecdsap384der":      kms.KeyType(kms.ECDSAP384TypeDER),
+		"ecdsap521ieee1363": kms.KeyType(kms.ECDSAP521TypeIEEEP1363),
+		"ecdsap521der":      kms.KeyType(kms.ECDSAP521TypeDER),
 	}
 
 	//nolint:gochecknoglobals
 	keyAgreementTypes = map[string]kms.KeyType{
-		"x25519kw": kms.X25519ECDHKWType,
-		"p256kw":   kms.NISTP256ECDHKWType,
-		"p384kw":   kms.NISTP384ECDHKWType,
-		"p521kw":   kms.NISTP521ECDHKWType,
+		"x25519kw": kms.KeyType(kms.X25519ECDHKWType),
+		"p256kw":   kms.KeyType(kms.NISTP256ECDHKWType),
+		"p384kw":   kms.KeyType(kms.NISTP384ECDHKWType),
+		"p521kw":   kms.KeyType(kms.NISTP521ECDHKWType),
 	}
 )
 
@@ -312,7 +312,7 @@ func Cmd(server server) (*cobra.Command, error) {
 }
 
 // NewAgentParameters constructs AgentParameters with the given cobra command.
-func NewAgentParameters(server server, cmd *cobra.Command) (*AgentParameters, error) { //nolint: funlen,gocyclo
+func NewAgentParameters(server server, cmd *cobra.Command) (*AgentParameters, error) { // nolint: funlen,gocyclo
 	// log level
 	logLevel, err := getUserSetVar(cmd, agentLogLevelFlagName, agentLogLevelEnvKey, true)
 	if err != nil {

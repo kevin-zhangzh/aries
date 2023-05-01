@@ -16,7 +16,7 @@ IMAGE_VERSION="${DOCKER_IMAGE_VERSION:-latest}"
 # generate and validate commands
 GENERATE_COMMAND="generate spec -w $SPEC_DIR -o $OUTPUT"
 VALIDATE_COMMAND="validate $OUTPUT"
-
+#--env HTTP_PROXY="http://127.0.0.1:7890" --env HTTPS_PROXY="http://127.0.0.1:7890"
 echo "Generating Open API spec"
 docker run --rm -v $(pwd):$WORKING_DIR -w $WORKING_DIR ${IMAGE}:${IMAGE_VERSION} $GENERATE_COMMAND
 
