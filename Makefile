@@ -245,7 +245,7 @@ clean-build:
 clean-fixtures:
 	@rm -Rf ./test/bdd/fixtures/keys/tls
 	@rm -Rf ./test/bdd/fixtures/demo/openapi/specs
-	@cd test/bdd/fixtures/demo/openapi && docker-compose down 2> /dev/null
-	@cd test/bdd/fixtures/sidetree-mock && docker-compose down 2> /dev/null
-	@cd test/bdd/fixtures/agent-rest && docker-compose down 2> /dev/null
+	@cd test/bdd/fixtures/demo/openapi && docker compose down 2> /dev/null
+	@cd test/bdd/fixtures/sidetree-mock && docker compose down 2> /dev/null
+	@cd test/bdd/fixtures/agent-rest && docker compose down 2> /dev/null
 

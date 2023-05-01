@@ -123,7 +123,7 @@ func runBddTests(tags, format string) int {
 			}
 		})
 		s.AfterSuite(func() {
-			err := os.Remove("docker-compose.log")
+			err := os.RemoveAll("docker-compose.log")
 			if err != nil {
 				fmt.Printf("unable to delete docker-compose.log: %v, proceeding with docker decompose..", err)
 			}
