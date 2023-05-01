@@ -24,6 +24,7 @@ LABEL org.opencontainers.image.source https://github.com/hyperledger/aries-frame
 
 ARG GO_TAGS
 ARG GOPROXY
+RUN cd cmd/aries-agent-rest && go mod tidy && cd ../..
 RUN GO_TAGS=${GO_TAGS} GOPROXY=${GOPROXY} make agent-rest
 
 

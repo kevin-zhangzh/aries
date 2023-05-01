@@ -27,8 +27,8 @@ set -o allexport
 set +o allexport
 
 cd $AGENT_COMPOSE_FILE
-docker-compose -f docker-compose.yml  ${DEMO_COMPOSE_OP}
+docker compose -f docker-compose.yml  ${DEMO_COMPOSE_OP}
 cd $SIDETREE_COMPOSE_FILE
-docker-compose -f docker-compose.yml ${DEMO_COMPOSE_OP}
+docker compose -f docker-compose.yml ${DEMO_COMPOSE_OP}
 cd $DEMO_PATH
-docker-compose -f docker-compose.yml ${DEMO_COMPOSE_OP}
+docker compose -f docker-compose.yml ${DEMO_COMPOSE_OP}
